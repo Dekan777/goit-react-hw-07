@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getContact, getFilter } from '../redux/selectors';
 import { removeContact } from '../redux/contacsSlice';
 
-export const ContactList = () => {
+const ContactList = () => {
   const contacts = useSelector(getContact);
   const filter = useSelector(getFilter);
 
@@ -42,3 +42,5 @@ export const ContactList = () => {
     </div>
   );
 };
+
+export default ContactList;

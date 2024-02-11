@@ -3,7 +3,7 @@ import { setFilterValue } from '../redux/filtersSlice';
 import { useDispatch } from 'react-redux';
 import css from './SearchBox.module.css';
 
-export const SearchBox = () => {
+const SearchBox = () => {
   const id = useId();
   const dispatch = useDispatch();
 
@@ -24,3 +24,5 @@ export const SearchBox = () => {
     </div>
   );
 };
+
+export default SearchBox;
