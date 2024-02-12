@@ -4,7 +4,7 @@ export const contacsSlice = createSlice({
     name: 'contacts',
     initialState: {
         contacts: [],
-        loading: false,
+        isLoading: false,
         error: null
     },
     reducers: {
@@ -38,7 +38,7 @@ export const contacsSlice = createSlice({
 });
 
 
-export const { addContact, removeContact } = contacsSlice.actions;
+export const { fetchingInProgress, fetchingSuccess, fetchingError, addContact, removeContact } = contacsSlice.actions;
 
 
 export const contacsReducer = contacsSlice.reducer;
