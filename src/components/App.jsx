@@ -4,11 +4,20 @@ import SearchBox from './SearchBox/SearchBox';
 import ContactForm from './ContactForm/ContactForm';
 import { fetchContacts } from './redux/operations';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectContacts,
+  selectIsLoading,
+  selectError,
+} from './redux/selectors';
 
 import './App.css';
 
 export const App = () => {
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,12 +27,17 @@ export const App = () => {
   return (
     <div>
       <Phonebook text="Phonebook" />
-
-      <ContactForm />
-
-      <SearchBox />
-
-      <ContactList />
+      {isLoading && !error && <b>Request in progress...</b>}
+      {contacts.length === 0 ? (
+        ''
+      ) : (
+        <>
+          <ContactForm />
+          <SearchBox />
+          <ContactList />
+        </>
+      )}
+      ;
     </div>
   );
 };
