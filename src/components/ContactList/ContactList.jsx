@@ -2,33 +2,26 @@ import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
 import css from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilter } from '../redux/selectors';
-import { removeContact } from '../redux/contacsSlice';
+import { deleteContact } from '../redux/operations';
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
-
+  console.log(contacts);
   const dispatch = useDispatch();
 
-  const handleRemoveContact = contactId => dispatch(removeContact(contactId));
-
-  const filteredContactList = filter
-    ? contacts.contacts.filter(item =>
-        item.name.toLowerCase().includes(filter.toLowerCase())
-      )
-    : contacts.contacts;
+  const handleRemoveContact = contactId => dispatch(deleteContact(contactId));
 
   return (
     <div>
-      {filteredContactList.map(({ name, number, id }) => (
-        <div className={css.container} key={`${name}-${number}`}>
+      {contacts.map(({ name, phone, id, createdAt }) => (
+        <div className={css.container} key={createdAt}>
           <p className={css.pItem}>
             <BsFillPersonFill className={css.myIcon} size="20" />
             {name}
           </p>
           <p className={css.par}>
             <BsFillTelephoneFill className={css.myIcon} size="16" />
-            {number}
+            {phone}
           </p>
 
           <button
