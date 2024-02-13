@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../redux/contacsSlice';
-import { getContact } from '../redux/selectors';
+import { selectContacts } from '../redux/selectors';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import css from './ContactForm.module.css';
@@ -16,7 +16,7 @@ const ContactForm = () => {
   const nameFieldId = useId();
   const numberFieldId = useId();
 
-  const contacts = useSelector(getContact);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handlePushForm = async (values, { resetForm }) => {

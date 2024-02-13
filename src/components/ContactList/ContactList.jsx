@@ -1,12 +1,12 @@
 import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
 import css from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContact, getFilter } from '../redux/selectors';
+import { selectContacts, selectFilter } from '../redux/selectors';
 import { removeContact } from '../redux/contacsSlice';
 
 const ContactList = () => {
-  const contacts = useSelector(getContact);
-  const filter = useSelector(getFilter);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
 
   const dispatch = useDispatch();
 
