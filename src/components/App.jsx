@@ -21,7 +21,9 @@ export const App = () => {
   return (
     <div>
       {isLoading && <p>Loading tasks...</p>}
+
       {error && <p>{error}</p>}
+
       {/* <p>{contacts.length > 0 && JSON.stringify(contacts, null, 2)}</p> */}
       <Phonebook text="Phonebook" />
 

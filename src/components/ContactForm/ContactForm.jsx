@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../redux/contacsSlice';
 import { getContact } from '../redux/selectors';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+
 import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 
@@ -33,24 +33,8 @@ const ContactForm = () => {
     }
   };
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .matches(/^[a-zA-Z\s-]+$/, 'Must contain only letters')
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Username required for entry'),
-    number: Yup.string()
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Number required for entry'),
-  });
-
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handlePushForm}
-      validationSchema={validationSchema}
-    >
+    <Formik initialValues={initialValues} onSubmit={handlePushForm}>
       <Form className={css.classForm}>
         <ErrorMessage name="name" component="div" className={css.error} />
 

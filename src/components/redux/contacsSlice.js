@@ -17,7 +17,7 @@ const contacsSlice = createSlice({
             .addCase(fetchContacts.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                state.items = action.payload;
+                state.contacts = action.payload;
             })
             .addCase(fetchContacts.rejected, (state, action) => {
                 state.isLoading = false;
@@ -27,7 +27,7 @@ const contacsSlice = createSlice({
 });
 
 
-export const tasksReducer = contacsSlice.reducer;
+export const contactsReducer = contacsSlice.reducer;
 // reducers: {
 
 //     fetchingInProgress(state) {
