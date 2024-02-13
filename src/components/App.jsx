@@ -28,16 +28,15 @@ export const App = () => {
     <div>
       <Phonebook text="Phonebook" />
       {isLoading && !error && <b>Request in progress...</b>}
-      {contacts.length === 0 ? (
+      <ContactForm />
+      {contacts.length < 1 ? (
         ''
       ) : (
         <>
-          <ContactForm />
           <SearchBox />
           <ContactList />
         </>
       )}
-      ;
     </div>
   );
 };
