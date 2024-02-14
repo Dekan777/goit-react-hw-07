@@ -1,32 +1,27 @@
 .myIcon {
-  color: #494545;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
-.conteyner {
+.container {
   display: flex;
-  flex-direction: column;
-  border: 1px solid #878888;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #a6bfc5;
+  border-radius: 8px;
+  padding: 8px;
+}
 
-  margin-bottom: 10px;
+.pConteiner {
 }
 
 .button {
-  padding: 10px; /* Внутренний отступ для кнопки */
-  background-color: #8b8b8b; /* Цвет фона кнопки */
-  color: #fff; /* Цвет текста на кнопке */
-  border: none; /* Убираем границу у кнопки */
-
-  cursor: pointer; /* Устанавливаем указатель при наведении на кнопку */
-
-  width: 198px;
+  border: none;
+  background-color: transparent;
 }
 
 .par {
-  /* margin-right: 5px; */
-  padding-left: 4px;
 }
 
 .pIttem {
-  /* padding: 0 5px 0 5px; */
+  margin-bottom: 10px;
 }

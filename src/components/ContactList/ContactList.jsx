@@ -1,8 +1,12 @@
-import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { FaUserAlt } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
 import css from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectVisibleContacts } from '../redux/selectors';
 import { deleteContact } from '../redux/operations';
+
+import { IconContext } from 'react-icons';
+import { IoClose } from 'react-icons/io5';
 
 const ContactList = () => {
   const filteredContacts = useSelector(selectVisibleContacts);
@@ -15,20 +19,24 @@ const ContactList = () => {
     <div>
       {filteredContacts.map(({ name, phone, id, createdAt }) => (
         <div className={css.container} key={createdAt}>
-          <p className={css.pItem}>
-            <BsFillPersonFill className={css.myIcon} size="20" />
-            {name}
-          </p>
-          <p className={css.par}>
-            <BsFillTelephoneFill className={css.myIcon} size="16" />
-            {phone}
-          </p>
+          <div className={css.pConteiner}>
+            <p className={css.pItem}>
+              <FaUserAlt className={css.myIcon} />
+              {name}
+            </p>
+            <p className={css.par}>
+              <FaPhoneAlt className={css.myIcon} />
+              {phone}
+            </p>
+          </div>
 
           <button
             className={css.button}
             onClick={() => handleRemoveContact(id)}
           >
-            Delete
+            <IconContext.Provider value={{ size: '2em' }}>
+              <IoClose />
+            </IconContext.Provider>
           </button>
         </div>
       ))}
