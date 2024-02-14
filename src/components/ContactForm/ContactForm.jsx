@@ -1,9 +1,6 @@
 import { useDispatch } from 'react-redux';
-
 import { addContact } from '../redux/operations';
-
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-
 import css from './ContactForm.module.css';
 
 const initialValues = {
@@ -14,10 +11,12 @@ const initialValues = {
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = values => {
-    const form = event.target;
-    dispatch(addContact(values.name));
-    form.reset();
+  const handleSubmit = (values, { resetForm }) => {
+    const { name, number } = values;
+    console.log(name, number);
+
+    dispatch(addContact({ name, phone: number }));
+    resetForm();
   };
 
   const validate = values => {
