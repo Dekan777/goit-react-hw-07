@@ -25,3 +25,9 @@
 .pIttem {
   margin-bottom: 10px;
 }
+
+.containerAll {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}

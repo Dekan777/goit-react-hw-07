@@ -16,7 +16,7 @@ const ContactList = () => {
   const handleRemoveContact = contactId => dispatch(deleteContact(contactId));
 
   return (
-    <div>
+    <div className={css.containerAll}>
       {filteredContacts.map(({ name, phone, id, createdAt }) => (
         <div className={css.container} key={createdAt}>
           <div className={css.pConteiner}>
