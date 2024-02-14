@@ -13,7 +13,12 @@ const SearchBox = () => {
   return (
     <div>
       <p className={css.pItem}>Find contacts by name</p>
-      <input className={css.input} type="text" onChange={handleChange} />
+      <input
+        className={css.input}
+        type="text"
+        onChange={handleChange}
+        style={{ backgroundColor: 'lightwite' }}
+      />
     </div>
   );
 };

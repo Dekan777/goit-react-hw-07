@@ -48,7 +48,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             placeholder="Username"
-            style={{ backgroundColor: 'lightblue' }} // Set the background color here
+            style={{ backgroundColor: 'lightwite' }} // Set the background color here
           />
         </div>
         <div className={css.fieldContainer}>
@@ -59,7 +59,7 @@ const ContactForm = () => {
             type="text"
             name="number"
             placeholder="Number"
-            style={{ backgroundColor: 'lightgreen' }} // Set the background color here
+            style={{ backgroundColor: 'lightwite' }} // Set the background color here
           />
         </div>
         <div className={css.messageContainer}></div>
