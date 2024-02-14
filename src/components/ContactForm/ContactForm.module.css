@@ -17,6 +17,7 @@
 }
 
 .classForm button {
+  margin-top: 15px;
   padding: 10px; /* Внутренний отступ для кнопки */
   background-color: #007bff; /* Цвет фона кнопки */
   color: #fff; /* Цвет текста на кнопке */
@@ -36,4 +37,13 @@
   font-weight: bold;
   color: rgb(121, 120, 119);
   padding-left: 9px;
+}
+
+.errorContainer {
+  height: 1.5em;
+  visibility: hidden;
+}
+
+.errorContainer .error {
+  visibility: visible;
 }

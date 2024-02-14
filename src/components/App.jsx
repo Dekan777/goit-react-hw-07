@@ -27,7 +27,7 @@ export const App = () => {
   return (
     <div>
       <Phonebook text="Phonebook" />
-      {isLoading && !error && <b>Request in progress...</b>}
+
       <ContactForm />
       {contacts.length < 1 ? (
         ''
@@ -37,6 +37,9 @@ export const App = () => {
           <ContactList />
         </>
       )}
+      <div style={{ textAlign: 'center' }}>
+        {isLoading && !error && <b>Request in progress...</b>}
+      </div>
     </div>
   );
 };
