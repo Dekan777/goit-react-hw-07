@@ -17,7 +17,10 @@ const SearchBox = () => {
         className={css.input}
         type="text"
         onChange={handleChange}
-        style={{ backgroundColor: 'white' }}
+        style={{
+          backgroundColor: 'white',
+          color: 'black',
+        }}
       />
     </div>
   );
