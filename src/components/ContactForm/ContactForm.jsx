@@ -44,13 +44,23 @@ const ContactForm = () => {
           <div className={css.errorContainer}>
             <ErrorMessage name="name" component="div" className={css.error} />
           </div>
-          <Field type="text" name="name" placeholder="Username" />
+          <Field
+            type="text"
+            name="name"
+            placeholder="Username"
+            style={{ backgroundColor: 'lightblue' }} // Set the background color here
+          />
         </div>
         <div className={css.fieldContainer}>
           <div className={css.errorContainer}>
             <ErrorMessage name="number" component="div" className={css.error} />
           </div>
-          <Field type="text" name="number" placeholder="Number" />
+          <Field
+            type="text"
+            name="number"
+            placeholder="Number"
+            style={{ backgroundColor: 'lightgreen' }} // Set the background color here
+          />
         </div>
         <div className={css.messageContainer}></div>
         <button className={css.classBtn} type="submit">
